@@ -30,5 +30,36 @@ Thumbs.db
 
 # Logs
 *.log
+<<<<<<< HEAD
 uploads/
 venv/
+=======
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Test videos
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Temporary/cache
+.cache/
+*.tmp
+
+# Model checkpoints
+*.pt
+*.pth
+
+# IDE
+.vscode/
+.idea/
+# Test images
+*.jpg
+*.jpeg
+*.png
+>>>>>>> 8285b32 (Add deepfake detection AI pipeline)
