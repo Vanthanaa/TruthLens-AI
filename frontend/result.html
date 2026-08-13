@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results - TruthLens AI</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="result-page">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-eye me-2"></i>
+                <span>TruthLens AI</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="upload.html">Detection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Result Section -->
+    <section class="result-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Header -->
+                    <div class="section-header text-center fade-in-up mb-4">
+                        <div class="badge badge-glow mb-3">
+                            <i class="fas fa-clipboard-check me-2"></i>Analysis Results
+                        </div>
+                        <h2 class="display-5 fw-bold mb-3">Detection Results</h2>
+                        <p class="lead text-muted-light">
+                            Comprehensive multi-modal analysis of uploaded content
+                        </p>
+                    </div>
+
+                    <!-- Main Result Card -->
+                    <div class="glass-card result-card fade-in-up mb-4">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4 text-center">
+                                <div class="result-status" id="resultStatus">
+                                    <i class="fas fa-check-circle"></i>
+                                    <h3 class="mb-0">REAL</h3>
+                                    <p class="text-muted-light">Content Verified</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="result-details">
+                                    <div class="mb-4">
+                                        <h5 class="mb-2">Overall Confidence Score</h5>
+                                        <div class="progress" style="height: 10px;">
+                                            <div class="progress-bar bg-success" id="overallScore" 
+                                                 role="progressbar" style="width: 0%" data-value="94"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between mt-1">
+                                            <small class="text-muted-light">0%</small>
+                                            <span class="fw-bold" id="overallScoreText">0%</span>
+                                            <small class="text-muted-light">100%</small>
+                                        </div>
+                                    </div>
+                                    <div class="file-info-box">
+                                        <div class="row">
+                                            <div class="col-md-4 mb-2 mb-md-0">
+                                                <small class="text-muted-light d-block">File Name</small>
+                                                <strong id="resultFileName">video.mp4</strong>
+                                            </div>
+                                            <div class="col-md-4 mb-2 mb-md-0">
+                                                <small class="text-muted-light d-block">File Size</small>
+                                                <strong id="resultFileSize">2.5 MB</strong>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <small class="text-muted-light d-block">Analysis Time</small>
+                                                <strong id="analysisTime">187ms</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Breakdown -->
+                    <div class="row g-4">
+                        <!-- Face Analysis -->
+                        <div class="col-lg-6">
+                            <div class="glass-card analysis-card fade-in-up">
+                                <div class="card-header-custom">
+                                    <i class="fas fa-user"></i>
+                                    <h5 class="mb-0">Face Analysis</h5>
+                                    <span class="badge bg-success" id="faceScore">96%</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Facial Landmarks</small>
+                                            <strong>98%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 98%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Texture Consistency</small>
+                                            <strong>95%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Lighting Analysis</small>
+                                            <strong>94%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 94%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-0">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Expression Flow</small>
+                                            <strong>97%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 97%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="analysis-summary mt-3">
+                                        <i class="fas fa-info-circle text-primary me-2"></i>
+                                        <small class="text-muted-light">
+                                            No manipulation artifacts detected. Natural facial movements and expressions.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Voice Analysis -->
+                        <div class="col-lg-6">
+                            <div class="glass-card analysis-card fade-in-up" style="animation-delay: 0.1s;">
+                                <div class="card-header-custom">
+                                    <i class="fas fa-microphone-alt"></i>
+                                    <h5 class="mb-0">Voice Analysis</h5>
+                                    <span class="badge bg-success" id="voiceScore">93%</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Frequency Pattern</small>
+                                            <strong>95%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Voice Fingerprint</small>
+                                            <strong>92%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 92%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Background Noise</small>
+                                            <strong>91%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 91%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-0">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Audio Quality</small>
+                                            <strong>94%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 94%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="analysis-summary mt-3">
+                                        <i class="fas fa-info-circle text-primary me-2"></i>
+                                        <small class="text-muted-light">
+                                            Natural voice patterns detected. No synthetic audio signatures found.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lip Sync Analysis -->
+                        <div class="col-lg-6">
+                            <div class="glass-card analysis-card fade-in-up" style="animation-delay: 0.2s;">
+                                <div class="card-header-custom">
+                                    <i class="fas fa-user"></i>
+                                    <h5 class="mb-0">Lip Sync Analysis</h5>
+                                    <span class="badge bg-success" id="lipScore">95%</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Phoneme-Viseme Match</small>
+                                            <strong>96%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 96%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Timing Synchronization</small>
+                                            <strong>94%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 94%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Mouth Shape</small>
+                                            <strong>95%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-0">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Expression Sync</small>
+                                            <strong>93%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 93%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="analysis-summary mt-3">
+                                        <i class="fas fa-info-circle text-primary me-2"></i>
+                                        <small class="text-muted-light">
+                                            Perfect audio-visual synchronization. Natural speech patterns.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Metadata Verification -->
+                        <div class="col-lg-6">
+                            <div class="glass-card analysis-card fade-in-up" style="animation-delay: 0.3s;">
+                                <div class="card-header-custom">
+                                    <i class="fas fa-file-code"></i>
+                                    <h5 class="mb-0">Metadata Verification</h5>
+                                    <span class="badge bg-success" id="metaScore">92%</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">EXIF Data</small>
+                                            <strong>94%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 94%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Encoding Signature</small>
+                                            <strong>91%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 91%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Hash Verification</small>
+                                            <strong>93%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 93%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-0">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <small class="text-muted-light">Compression Artifacts</small>
+                                            <strong>90%</strong>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="analysis-summary mt-3">
+                                        <i class="fas fa-info-circle text-primary me-2"></i>
+                                        <small class="text-muted-light">
+                                            Metadata consistent with original capture. No re-encoding detected.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary Card -->
+                    <div class="glass-card summary-card fade-in-up mt-4">
+                        <div class="card-header-custom">
+                            <i class="fas fa-clipboard-list"></i>
+                            <h5 class="mb-0">Analysis Summary</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <p class="mb-3">
+                                        <strong>Conclusion:</strong> The uploaded content shows <span class="text-success">no signs of manipulation</span>. 
+                                        All analysis modules indicate authentic, naturally captured media with high confidence scores.
+                                    </p>
+                                    <ul class="summary-list">
+                                        <li><i class="fas fa-check-circle text-success"></i> Facial features are consistent and natural</li>
+                                        <li><i class="fas fa-check-circle text-success"></i> Voice patterns match human speech characteristics</li>
+                                        <li><i class="fas fa-check-circle text-success"></i> Lip synchronization is accurate and natural</li>
+                                        <li><i class="fas fa-check-circle text-success"></i> Metadata indicates original source file</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="final-verdict">
+                                        <i class="fas fa-eye fa-3x text-success mb-2"></i>
+                                        <h4 class="mb-1">AUTHENTIC</h4>
+                                        <p class="text-muted-light mb-0">94% Confidence</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="text-center mt-4 fade-in-up">
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <button class="btn btn-success btn-lg btn-glow px-4" id="downloadReport">
+                                <i class="fas fa-file-pdf me-2"></i>Download PDF Report
+                            </button>
+                            <button class="btn btn-primary btn-lg btn-glow px-4" id="fileComplaint">
+                                <i class="fas fa-exclamation-triangle me-2"></i>File Complaint
+                            </button>
+                            <a href="upload.html" class="btn btn-outline-light btn-lg px-4">
+                                <i class="fas fa-upload me-2"></i>Analyze Another File
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
