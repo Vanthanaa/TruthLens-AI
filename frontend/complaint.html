@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Complaint - TruthLens AI</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="complaint-page">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-eye me-2"></i>
+                <span>TruthLens AI</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="upload.html">Detection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Complaint Section -->
+    <section class="complaint-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- Header -->
+                    <div class="section-header text-center fade-in-up mb-4">
+                        <div class="badge badge-glow mb-3">
+                            <i class="fas fa-exclamation-triangle me-2"></i>File Complaint
+                        </div>
+                        <h2 class="display-5 fw-bold mb-3">Report Deepfake Content</h2>
+                        <p class="lead text-muted-light">
+                            Submit a formal complaint with analysis evidence for legal action
+                        </p>
+                    </div>
+
+                    <!-- Complaint Form -->
+                    <div class="glass-card complaint-card fade-in-up">
+                        <form id="complaintForm">
+                            <!-- Personal Information -->
+                            <div class="form-section">
+                                <h5 class="mb-3">
+                                    <i class="fas fa-user-circle text-primary me-2"></i>Personal Information
+                                </h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="fullName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
+                                        <select class="form-select" id="country" required>
+                                            <option value="">Select Country</option>
+                                            <option value="US">United States</option>
+                                            <option value="UK">United Kingdom</option>
+                                            <option value="IN">India</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="FR">France</option>
+                                            <option value="OTHER">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <!-- Complaint Details -->
+                            <div class="form-section">
+                                <h5 class="mb-3">
+                                    <i class="fas fa-file-alt text-primary me-2"></i>Complaint Details
+                                </h5>
+                                <div class="mb-3">
+                                    <label for="complaintType" class="form-label">Type of Violation <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="complaintType" required>
+                                        <option value="">Select Violation Type</option>
+                                        <option value="defamation">Defamation / Character Attack</option>
+                                        <option value="fraud">Fraud / Scam</option>
+                                        <option value="harassment">Harassment / Cyberbullying</option>
+                                        <option value="identity">Identity Theft</option>
+                                        <option value="misinformation">Misinformation / Fake News</option>
+                                        <option value="political">Political Manipulation</option>
+                                        <option value="financial">Financial Fraud</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="platform" class="form-label">Platform Where Found <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="platform" placeholder="e.g., Facebook, YouTube, Twitter, WhatsApp" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="url" class="form-label">URL / Link (if available)</label>
+                                    <input type="url" class="form-control" id="url" placeholder="https://...">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Description <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="description" rows="5" required 
+                                          placeholder="Describe the incident, how you discovered it, and any impact it has caused..."></textarea>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <!-- Evidence Upload -->
+                            <div class="form-section">
+                                <h5 class="mb-3">
+                                    <i class="fas fa-folder-open text-primary me-2"></i>Evidence Upload
+                                </h5>
+                                <div class="upload-area-small" id="evidenceUpload">
+                                    <i class="fas fa-cloud-upload-alt fa-2x mb-2"></i>
+                                    <h6 class="mb-1">Upload Analysis Report & Evidence</h6>
+                                    <p class="text-muted-light mb-0">PDF, JPG, PNG (Max 10MB)</p>
+                                    <input type="file" id="evidenceInput" accept=".pdf,.jpg,.jpeg,.png" hidden>
+                                </div>
+                                <div class="evidence-list mt-3" id="evidenceList">
+                                    <!-- Evidence items will be added here -->
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <!-- Declaration -->
+                            <div class="form-section">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="declaration" required>
+                                    <label class="form-check-label" for="declaration">
+                                        I declare that the information provided is true and accurate to the best of my knowledge. 
+                                        I understand that false complaints may have legal consequences.
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-primary btn-lg btn-glow px-5">
+                                    <i class="fas fa-paper-plane me-2"></i>Submit Complaint
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Info Box -->
+                    <div class="glass-card info-box fade-in-up mt-4">
+                        <div class="d-flex">
+                            <i class="fas fa-info-circle text-primary fa-2x me-3"></i>
+                            <div>
+                                <h6 class="mb-1">What Happens Next?</h6>
+                                <p class="text-muted-light mb-0">
+                                    Your complaint will be reviewed within 24-48 hours. You'll receive a Complaint ID 
+                                    via email for tracking. Our team will coordinate with relevant platforms and 
+                                    authorities for content removal and legal action if warranted.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-modal">
+                <div class="modal-body text-center p-5">
+                    <div class="success-icon mb-3">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="mb-2">Complaint Submitted Successfully!</h3>
+                    <p class="text-muted-light mb-4">
+                        Your complaint has been received and assigned a unique tracking ID.
+                    </p>
+                    <div class="complaint-id-box mb-4">
+                        <small class="text-muted-light d-block">Your Complaint ID</small>
+                        <h2 class="mb-0" id="complaintId">TL-2026-XXXXX</h2>
+                    </div>
+                    <p class="text-muted-light mb-4">
+                        A confirmation email has been sent to your registered email address.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <button type="button" class="btn btn-primary btn-glow" data-bs-dismiss="modal">
+                            <i class="fas fa-home me-2"></i>Back to Home
+                        </button>
+                        <button type="button" class="btn btn-outline-light" id="downloadComplaint">
+                            <i class="fas fa-download me-2"></i>Download Receipt
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
